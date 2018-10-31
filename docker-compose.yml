@@ -1,0 +1,45 @@
+version: '2.1'
+services:
+  mongo:
+    image: "mongo:3.2"
+
+  mysql:
+    image: "mysql:5.7"
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=appointments
+      - MYSQL_USER=hema
+      - MYSQL_PASSWORD=hema
+
+    volumes:
+      - ./mysql:/var/lib/mysql
+
+  authentication:
+    build: "./authentication_service"
+    ports:
+      - "7070:7070"
+    depends_on:
+      - mongo
+
+  appointment:
+    build: "./appointments_service"
+    ports:
+      - "7071:7071"
+    depends_on:
+      mysql:
+        condition: service_started
+    entrypoint:
+      - php
+      - artisan
+      - migrate
+
+  doctor:
+    build: "./doctors_service"
+    ports:
+     - "7072:7072"
+
+  patient:
+    build: "./patients_service"
+    ports:
+     - "7073:7073"

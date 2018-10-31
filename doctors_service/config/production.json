@@ -1,0 +1,13 @@
+{
+    "app": {
+        "port": 7072
+    },
+    "auth": {
+        "url": "http://authentication",
+        "port": 7070
+    },
+    "appointment": {
+        "url": "http://appointment",
+        "port": 7071
+    }
+}
