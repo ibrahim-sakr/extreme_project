@@ -1,0 +1,749 @@
+{
+	"info": {
+		"_postman_id": "d4cdf6b3-ed46-4eb5-84fa-ca0f5a29fa55",
+		"name": "Extreme Project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "doctors",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"fullName\": \"hema sakr\",\n\t\"username\": \"hema\",\n\t\"password\": \"123456\",\n\t\"password_verify\": \"123456\",\n\t\"email\": \"ebrahimes@gmail.com\",\n\t\"website\": \"\",\n\t\"bio\": \"\"\n}"
+						},
+						"url": {
+							"raw": "{{doctor_service_url}}/api/doctor",
+							"host": [
+								"{{doctor_service_url}}"
+							],
+							"path": [
+								"api",
+								"doctor"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "signin",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{doctor_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\": \"hema2\",\n\t\"password\": \"123456\"\n}"
+						},
+						"url": {
+							"raw": "{{doctor_service_url}}/api/signin",
+							"host": [
+								"{{doctor_service_url}}"
+							],
+							"path": [
+								"api",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{doctor_token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\": \"newUsername\",\n\t\"fullName\": \"hema sakr\",\n\t\"password\": \"123456\",\n\t\"password_verify\": \"123456\",\n\t\"email\": \"ebrahimes@gmail.com\",\n\t\"website\": \"\",\n\t\"bio\": \"\"\n}"
+						},
+						"url": {
+							"raw": "{{doctor_service_url}}/api/doctor/{{doctor_id}}",
+							"host": [
+								"{{doctor_service_url}}"
+							],
+							"path": [
+								"api",
+								"doctor",
+								"{{doctor_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{doctor_token}}",
+								"type": "text"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{doctor_service_url}}/api/doctor/{{doctor_id}}",
+							"host": [
+								"{{doctor_service_url}}"
+							],
+							"path": [
+								"api",
+								"doctor",
+								"{{doctor_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "find",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{doctor_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{doctor_service_url}}/api/doctor/{{doctor_id}}",
+							"host": [
+								"{{doctor_service_url}}"
+							],
+							"path": [
+								"api",
+								"doctor",
+								"{{doctor_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "patients",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"fullName\": \"hema sakr\",\n\t\"username\": \"hema\",\n\t\"password\": \"123456\",\n\t\"password_verify\": \"123456\",\n\t\"email\": \"ebrahimes@gmail.com\",\n\t\"website\": \"\",\n\t\"bio\": \"\"\n}"
+						},
+						"url": {
+							"raw": "{{patient_service_url}}/api/",
+							"host": [
+								"{{patient_service_url}}"
+							],
+							"path": [
+								"api",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "signin",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\": \"hema\",\n\t\"password\": \"123456\"\n}"
+						},
+						"url": {
+							"raw": "{{patient_service_url}}/api/signin",
+							"host": [
+								"{{patient_service_url}}"
+							],
+							"path": [
+								"api",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{patient_token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\": \"newUsername\",\n\t\"fullName\": \"hema sakr\",\n\t\"password\": \"123456\",\n\t\"password_verify\": \"123456\",\n\t\"email\": \"ebrahimes@gmail.com\",\n\t\"website\": \"\",\n\t\"bio\": \"\"\n}"
+						},
+						"url": {
+							"raw": "{{patient_service_url}}/api/{{patient_id}}",
+							"host": [
+								"{{patient_service_url}}"
+							],
+							"path": [
+								"api",
+								"{{patient_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{patient_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{patient_service_url}}/api/{{patient_id}}",
+							"host": [
+								"{{patient_service_url}}"
+							],
+							"path": [
+								"api",
+								"{{patient_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "find",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{patient_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{patient_service_url}}/api/{{patient_id}}",
+							"host": [
+								"{{patient_service_url}}"
+							],
+							"path": [
+								"api",
+								"{{patient_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"type\": \"doctor\",\n\t\"username\": \"hema20\",\n\t\"password\": \"123456\",\n\t\"fullName\": \"FullName\",\n\t\"email\": \"Email\",\n\t\"website\": \"Website\",\n\t\"bio\": \"Bio\"\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:7070/api/user",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "7070",
+							"path": [
+								"api",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\": \"hema4\",\n\t\"password\": \"123456\",\n\t\"fullName\": \"FullName\",\n\t\"email\": \"Email\",\n\t\"website\": \"Website\",\n\t\"bio\": \"Bio\"\n}"
+						},
+						"url": {
+							"raw": "{{authentication_url}}/api/user",
+							"host": [
+								"{{authentication_url}}"
+							],
+							"path": [
+								"api",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "find",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\": \"hema4\",\n\t\"password\": \"123456\",\n\t\"fullName\": \"FullName\",\n\t\"email\": \"Email\",\n\t\"website\": \"Website\",\n\t\"bio\": \"Bio\"\n}"
+						},
+						"url": {
+							"raw": "{{authentication_url}}/api/user/5bd4a02674c403e69dcb3ebd",
+							"host": [
+								"{{authentication_url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"5bd4a02674c403e69dcb3ebd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\": \"hema21\",\n\t\"password\": \"123456\",\n\t\"fullName\": \"FullName\",\n\t\"email\": \"Email\",\n\t\"website\": \"Website\",\n\t\"bio\": \"Bio\"\n}"
+						},
+						"url": {
+							"raw": "{{authentication_url}}/api/user/5bd4a02674c403e69dcb3ebd",
+							"host": [
+								"{{authentication_url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"5bd4a02674c403e69dcb3ebd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\": \"hema4\",\n\t\"password\": \"123456\",\n\t\"fullName\": \"FullName\",\n\t\"email\": \"Email\",\n\t\"website\": \"Website\",\n\t\"bio\": \"Bio\"\n}"
+						},
+						"url": {
+							"raw": "{{authentication_url}}/api/user/5bd4a02674c403e69dcb3ebd",
+							"host": [
+								"{{authentication_url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"5bd4a02674c403e69dcb3ebd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "token",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\": \"hema4\",\n\t\"password\": \"123456\"\n}"
+						},
+						"url": {
+							"raw": "{{authentication_url}}/api/token",
+							"host": [
+								"{{authentication_url}}"
+							],
+							"path": [
+								"api",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "verify",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYmYiOjE0NDQ0Nzg0MDAsInVzZXIiOnsiaWQiOiI1YmQ0NjQ4MTc0YzQwM2U2OWRjYjM1MTEiLCJ1c2VybmFtZSI6ImhlbWE0IiwicGFzc3dvcmQiOiItIiwiZnVsbE5hbWUiOiJGdWxsTmFtZSIsImVtYWlsIjoiRW1haWwiLCJ3ZWJzaXRlIjoiV2Vic2l0ZSIsImJpbyI6IkJpbyJ9fQ.CM_LaQ2KPhQ_sugyQx_yhbreSNBpSZSJ29VEQA1hT9o\"\n}"
+						},
+						"url": {
+							"raw": "{{authentication_url}}/api/verify",
+							"host": [
+								"{{authentication_url}}"
+							],
+							"path": [
+								"api",
+								"verify"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "appintments",
+			"item": [
+				{
+					"name": "doctor list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://127.0.0.1:7073/api/doctor/{{doctor_id}}",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "7073",
+							"path": [
+								"api",
+								"doctor",
+								"{{doctor_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "doctor available list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://127.0.0.1:7073/api/doctor/{{doctor_id}}/available",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "7073",
+							"path": [
+								"api",
+								"doctor",
+								"{{doctor_id}}",
+								"available"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "patient list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://127.0.0.1:7073/api/patient/{{patient_id}}",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "7073",
+							"path": [
+								"api",
+								"patient",
+								"{{patient_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "patient make appointment",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://127.0.0.1:7073/api/{{appointment_id}}/{{patient_id}}",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "7073",
+							"path": [
+								"api",
+								"{{appointment_id}}",
+								"{{patient_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "doctor create appointment",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://127.0.0.1:7073/api/{{doctor_id}}",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "7073",
+							"path": [
+								"api",
+								"{{doctor_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update appointment",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"patient_id\": \"hema\",\n\t\"from\": \"45623\",\n\t\"to\": \"32323\"\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:7073/api/{{appointment_id}}",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "7073",
+							"path": [
+								"api",
+								"{{appointment_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete appointment",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://127.0.0.1:7073/api/{{appointment_id}}",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "7073",
+							"path": [
+								"api",
+								"{{appointment_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
