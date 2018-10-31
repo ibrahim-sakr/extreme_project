@@ -36,4 +36,13 @@ then start sending requests
 - patien list all available appointments for a doctor
 - patient take an appointment
 - doctor update, delete his appointments
-- patient remove his appointments (not delete)
+
+## Used Technologies
+
+- Docker
+- MYSQL
+- Mongo
+- Nodejs
+- Golang
+- PHP
+- Bash
