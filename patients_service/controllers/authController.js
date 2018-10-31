@@ -16,7 +16,7 @@ class AuthController {
                 return res.json(errors);
             }
 
-            req.body.type = 'doctor';
+            req.body.type = 'patient';
 
             // use Auth
             Auth.token(req.body).then((token) => {

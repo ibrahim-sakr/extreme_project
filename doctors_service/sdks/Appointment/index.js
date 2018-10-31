@@ -22,10 +22,10 @@ class AppointmentSDK {
             })
                 .then(res => res.json())
                 .then(json => {
-                    if (json && json.error) {
-                        reject(json.error);
+                    if (json.error) {
+                        reject(json);
                     }
-                    resolve(json.user);
+                    resolve(json);
                 })
                 .catch((error) => reject(error));
         });
@@ -38,10 +38,10 @@ class AppointmentSDK {
             })
                 .then(res => res.json())
                 .then(json => {
-                    if (json && json.error) {
-                        reject(json.error);
+                    if (json.error) {
+                        reject(json);
                     }
-                    resolve(json.user);
+                    resolve(json);
                 })
                 .catch((error) => reject(error));
         });
@@ -54,10 +54,10 @@ class AppointmentSDK {
             })
                 .then(res => res.json())
                 .then(json => {
-                    if (json && json.error) {
-                        reject(json.error);
+                    if (json.error) {
+                        reject(json);
                     }
-                    resolve(json.user);
+                    resolve(json);
                 })
                 .catch((error) => reject(error));
         });

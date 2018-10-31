@@ -13,4 +13,4 @@ RUN composer install; \
     rm .env; \
     cp .env.example .env
 
-CMD ["php", "-S", "127.0.0.1:7071", "-t", "public"]
+CMD php -S 0.0.0.0:7071 -t public

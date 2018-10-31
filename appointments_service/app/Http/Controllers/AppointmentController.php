@@ -50,8 +50,8 @@ class AppointmentController extends Controller
         $appointment = new Appointment;
         $appointment->doctor_id = $doctorId;
         $appointment->patient_id = $request->patient_id;
-        $appointment->from = $request->from;
-        $appointment->to = $request->to;
+        $appointment->from_date = $request->from;
+        $appointment->to_date = $request->to;
 
         if (!$appointment->save()) {
             return response('failed to make an appointment', 400);
@@ -64,8 +64,8 @@ class AppointmentController extends Controller
     {
         $appointments = Appointment::find($appointmentId);
         $appointments->patient_id = $request->patient_id;
-        $appointments->from = $request->from;
-        $appointments->to = $request->to;
+        $appointments->from_date = $request->from;
+        $appointments->to_date = $request->to;
 
         if (!$appointments->save()) {
             return response('failed to make an appointment', 400);
@@ -82,7 +82,7 @@ class AppointmentController extends Controller
             return response('Not Found.', 404);
         }
         if ($appointments->delete()) {
-            return 'ok';
+            return response()->json(['status' => 'ok']);
         } else {
             return response('failed to delete resource', 400);
         }

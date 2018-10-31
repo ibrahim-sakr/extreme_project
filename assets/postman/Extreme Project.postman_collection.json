@@ -47,16 +47,11 @@
 								"name": "Content-Type",
 								"value": "application/json",
 								"type": "text"
-							},
-							{
-								"key": "Authorization",
-								"value": "Bearer {{doctor_token}}",
-								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"username\": \"hema2\",\n\t\"password\": \"123456\"\n}"
+							"raw": "{\n\t\"username\": \"hema\",\n\t\"password\": \"123456\"\n}"
 						},
 						"url": {
 							"raw": "{{doctor_service_url}}/api/signin",
@@ -90,7 +85,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"username\": \"newUsername\",\n\t\"fullName\": \"hema sakr\",\n\t\"password\": \"123456\",\n\t\"password_verify\": \"123456\",\n\t\"email\": \"ebrahimes@gmail.com\",\n\t\"website\": \"\",\n\t\"bio\": \"\"\n}"
+							"raw": "{\n\t\"username\": \"hema\",\n\t\"fullName\": \"hema sakr222\",\n\t\"password\": \"123456\",\n\t\"password_verify\": \"123456\",\n\t\"email\": \"ebrahimes@gmail.com\",\n\t\"website\": \"\",\n\t\"bio\": \"\"\n}"
 						},
 						"url": {
 							"raw": "{{doctor_service_url}}/api/doctor/{{doctor_id}}",
@@ -160,6 +155,143 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "create appointment",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{doctor_token}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"from\": \"2018-08-12 08:08:08\",\n\t\"to\": \"2018-08-12 12:08:08\",\n\t\"patient_id\": \"\"\n}"
+						},
+						"url": {
+							"raw": "{{doctor_service_url}}/api/appointment/",
+							"host": [
+								"{{doctor_service_url}}"
+							],
+							"path": [
+								"api",
+								"appointment",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list appointments",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{doctor_token}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"from\": \"2018-08-09 08:08:08\",\n\t\"to\": \"2018-08-09 12:08:08\",\n\t\"patient_id\": \"\"\n}"
+						},
+						"url": {
+							"raw": "{{doctor_service_url}}/api/appointment/",
+							"host": [
+								"{{doctor_service_url}}"
+							],
+							"path": [
+								"api",
+								"appointment",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update appointment",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{doctor_token}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"from\": \"2018-08-09 08:08:08\",\n\t\"to\": \"2018-08-09 12:08:08\",\n\t\"patient_id\": \"\"\n}"
+						},
+						"url": {
+							"raw": "{{doctor_service_url}}/api/appointment/{{appointment_id}}",
+							"host": [
+								"{{doctor_service_url}}"
+							],
+							"path": [
+								"api",
+								"appointment",
+								"{{appointment_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete appointment",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{doctor_token}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{doctor_service_url}}/api/appointment/{{appointment_id}}",
+							"host": [
+								"{{doctor_service_url}}"
+							],
+							"path": [
+								"api",
+								"appointment",
+								"{{appointment_id}}"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -180,16 +312,16 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"fullName\": \"hema sakr\",\n\t\"username\": \"hema\",\n\t\"password\": \"123456\",\n\t\"password_verify\": \"123456\",\n\t\"email\": \"ebrahimes@gmail.com\",\n\t\"website\": \"\",\n\t\"bio\": \"\"\n}"
+							"raw": "{\n\t\"fullName\": \"hema sakr\",\n\t\"username\": \"hema_patient\",\n\t\"password\": \"123456\",\n\t\"password_verify\": \"123456\",\n\t\"email\": \"ebrahimes@gmail.com\",\n\t\"website\": \"\",\n\t\"bio\": \"\"\n}"
 						},
 						"url": {
-							"raw": "{{patient_service_url}}/api/",
+							"raw": "{{patient_service_url}}/api/patient",
 							"host": [
 								"{{patient_service_url}}"
 							],
 							"path": [
 								"api",
-								""
+								"patient"
 							]
 						}
 					},
@@ -209,7 +341,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"username\": \"hema\",\n\t\"password\": \"123456\"\n}"
+							"raw": "{\n\t\"username\": \"hema_patient\",\n\t\"password\": \"123456\"\n}"
 						},
 						"url": {
 							"raw": "{{patient_service_url}}/api/signin",
@@ -246,12 +378,13 @@
 							"raw": "{\n\t\"username\": \"newUsername\",\n\t\"fullName\": \"hema sakr\",\n\t\"password\": \"123456\",\n\t\"password_verify\": \"123456\",\n\t\"email\": \"ebrahimes@gmail.com\",\n\t\"website\": \"\",\n\t\"bio\": \"\"\n}"
 						},
 						"url": {
-							"raw": "{{patient_service_url}}/api/{{patient_id}}",
+							"raw": "{{patient_service_url}}/api/patient/{{patient_id}}",
 							"host": [
 								"{{patient_service_url}}"
 							],
 							"path": [
 								"api",
+								"patient",
 								"{{patient_id}}"
 							]
 						}
@@ -274,12 +407,13 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{patient_service_url}}/api/{{patient_id}}",
+							"raw": "{{patient_service_url}}/api/patient/{{patient_id}}",
 							"host": [
 								"{{patient_service_url}}"
 							],
 							"path": [
 								"api",
+								"patient",
 								"{{patient_id}}"
 							]
 						}
@@ -302,13 +436,102 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{patient_service_url}}/api/{{patient_id}}",
+							"raw": "{{patient_service_url}}/api/patient/{{patient_id}}",
 							"host": [
 								"{{patient_service_url}}"
 							],
 							"path": [
 								"api",
+								"patient",
 								"{{patient_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list appointments",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{patient_token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{patient_service_url}}/api/appointment/",
+							"host": [
+								"{{patient_service_url}}"
+							],
+							"path": [
+								"api",
+								"appointment",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list available appointments",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{patient_token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{patient_service_url}}/api/appointment/doctor/{{doctor_id}}",
+							"host": [
+								"{{patient_service_url}}"
+							],
+							"path": [
+								"api",
+								"appointment",
+								"doctor",
+								"{{doctor_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "make appointment",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{patient_token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{patient_service_url}}/api/appointment/{{appointment_id}}",
+							"host": [
+								"{{patient_service_url}}"
+							],
+							"path": [
+								"api",
+								"appointment",
+								"{{appointment_id}}"
 							]
 						}
 					},
@@ -336,15 +559,10 @@
 							"raw": "{\n\t\"type\": \"doctor\",\n\t\"username\": \"hema20\",\n\t\"password\": \"123456\",\n\t\"fullName\": \"FullName\",\n\t\"email\": \"Email\",\n\t\"website\": \"Website\",\n\t\"bio\": \"Bio\"\n}"
 						},
 						"url": {
-							"raw": "http://127.0.0.1:7070/api/user",
-							"protocol": "http",
+							"raw": "{{authentication_url}}/api/user",
 							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+								"{{authentication_url}}"
 							],
-							"port": "7070",
 							"path": [
 								"api",
 								"user"
@@ -399,14 +617,14 @@
 							"raw": "{\n\t\"username\": \"hema4\",\n\t\"password\": \"123456\",\n\t\"fullName\": \"FullName\",\n\t\"email\": \"Email\",\n\t\"website\": \"Website\",\n\t\"bio\": \"Bio\"\n}"
 						},
 						"url": {
-							"raw": "{{authentication_url}}/api/user/5bd4a02674c403e69dcb3ebd",
+							"raw": "{{authentication_url}}/api/user/{{user_id}}",
 							"host": [
 								"{{authentication_url}}"
 							],
 							"path": [
 								"api",
 								"user",
-								"5bd4a02674c403e69dcb3ebd"
+								"{{user_id}}"
 							]
 						}
 					},
@@ -429,14 +647,14 @@
 							"raw": "{\n\t\"username\": \"hema21\",\n\t\"password\": \"123456\",\n\t\"fullName\": \"FullName\",\n\t\"email\": \"Email\",\n\t\"website\": \"Website\",\n\t\"bio\": \"Bio\"\n}"
 						},
 						"url": {
-							"raw": "{{authentication_url}}/api/user/5bd4a02674c403e69dcb3ebd",
+							"raw": "{{authentication_url}}/api/user/{{user_id}}",
 							"host": [
 								"{{authentication_url}}"
 							],
 							"path": [
 								"api",
 								"user",
-								"5bd4a02674c403e69dcb3ebd"
+								"{{user_id}}"
 							]
 						}
 					},
@@ -459,14 +677,14 @@
 							"raw": "{\n\t\"username\": \"hema4\",\n\t\"password\": \"123456\",\n\t\"fullName\": \"FullName\",\n\t\"email\": \"Email\",\n\t\"website\": \"Website\",\n\t\"bio\": \"Bio\"\n}"
 						},
 						"url": {
-							"raw": "{{authentication_url}}/api/user/5bd4a02674c403e69dcb3ebd",
+							"raw": "{{authentication_url}}/api/user/{{user_id}}",
 							"host": [
 								"{{authentication_url}}"
 							],
 							"path": [
 								"api",
 								"user",
-								"5bd4a02674c403e69dcb3ebd"
+								"{{user_id}}"
 							]
 						}
 					},
@@ -486,7 +704,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"username\": \"hema4\",\n\t\"password\": \"123456\"\n}"
+							"raw": "{\n\t\"type\": \"doctor\",\n\t\"username\": \"hema20\",\n\t\"password\": \"123456\"\n}"
 						},
 						"url": {
 							"raw": "{{authentication_url}}/api/token",
@@ -545,15 +763,10 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "http://127.0.0.1:7073/api/doctor/{{doctor_id}}",
-							"protocol": "http",
+							"raw": "{{appointment_url}}/api/doctor/{{doctor_id}}",
 							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+								"{{appointment_url}}"
 							],
-							"port": "7073",
 							"path": [
 								"api",
 								"doctor",
@@ -573,15 +786,10 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "http://127.0.0.1:7073/api/doctor/{{doctor_id}}/available",
-							"protocol": "http",
+							"raw": "{{appointment_url}}/api/doctor/{{doctor_id}}/available",
 							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+								"{{appointment_url}}"
 							],
-							"port": "7073",
 							"path": [
 								"api",
 								"doctor",
@@ -602,15 +810,10 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "http://127.0.0.1:7073/api/patient/{{patient_id}}",
-							"protocol": "http",
+							"raw": "{{appointment_url}}/api/patient/{{patient_id}}",
 							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+								"{{appointment_url}}"
 							],
-							"port": "7073",
 							"path": [
 								"api",
 								"patient",
@@ -630,15 +833,10 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "http://127.0.0.1:7073/api/{{appointment_id}}/{{patient_id}}",
-							"protocol": "http",
+							"raw": "{{appointment_url}}/api/{{appointment_id}}/{{patient_id}}",
 							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+								"{{appointment_url}}"
 							],
-							"port": "7073",
 							"path": [
 								"api",
 								"{{appointment_id}}",
@@ -662,18 +860,13 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": ""
+							"raw": "{\n\t\"from\": \"2018-08-09 08:08:08\",\n\t\"to\": \"2018-08-09 12:08:08\",\n\t\"patient_id\": \"\"\n}"
 						},
 						"url": {
-							"raw": "http://127.0.0.1:7073/api/{{doctor_id}}",
-							"protocol": "http",
+							"raw": "{{appointment_url}}/api/{{doctor_id}}",
 							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+								"{{appointment_url}}"
 							],
-							"port": "7073",
 							"path": [
 								"api",
 								"{{doctor_id}}"
@@ -699,15 +892,10 @@
 							"raw": "{\n\t\"patient_id\": \"hema\",\n\t\"from\": \"45623\",\n\t\"to\": \"32323\"\n}"
 						},
 						"url": {
-							"raw": "http://127.0.0.1:7073/api/{{appointment_id}}",
-							"protocol": "http",
+							"raw": "{{appointment_url}}/api/{{appointment_id}}",
 							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+								"{{appointment_url}}"
 							],
-							"port": "7073",
 							"path": [
 								"api",
 								"{{appointment_id}}"
@@ -726,15 +914,10 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "http://127.0.0.1:7073/api/{{appointment_id}}",
-							"protocol": "http",
+							"raw": "{{appointment_url}}/api/{{appointment_id}}",
 							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+								"{{appointment_url}}"
 							],
-							"port": "7073",
 							"path": [
 								"api",
 								"{{appointment_id}}"

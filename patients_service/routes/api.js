@@ -20,12 +20,10 @@ module.exports = (app) => {
 
     // list his appointments
     api.get('/appointment', Authenticate, AppointmentsController.list);
-    // create new appointment
-    api.post('/appointment', Authenticate, AppointmentsController.create);
-    // update appointment
-    api.put('/appointment/:id', Authenticate, AppointmentsController.update);
-    // delete appointment
-    api.delete('/appointment/:id', Authenticate, AppointmentsController.delete);
+    // list available appointments for a doctor
+    api.get('/appointment/doctor/:id', Authenticate, AppointmentsController.listAvailable);
+    // make appointment
+    api.get('/appointment/:id', Authenticate, AppointmentsController.make);
 
     app.use('/api', api);
 }

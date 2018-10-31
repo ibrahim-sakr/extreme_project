@@ -15,8 +15,8 @@ class AppointmentsController {
     create(req, res) {
         const roles = {
             patient_id: ['string'],
-            from: ['required', 'date_format'], // YYYY-MM-DD
-            to: ['required', 'date_format'] // YYYY-MM-DD
+            from: ['required'],
+            to: ['required']
         };
 
         const validation = new Validator();
@@ -36,8 +36,8 @@ class AppointmentsController {
     update(req, res) {
         const roles = {
             patient_id: ['string'],
-            from: ['required', 'date_format'], // YYYY-MM-DD
-            to: ['required', 'date_format'] // YYYY-MM-DD
+            from: ['required'],
+            to: ['required']
         };
  
         const validation = new Validator();
