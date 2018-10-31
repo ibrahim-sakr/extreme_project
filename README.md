@@ -21,7 +21,7 @@ docker-compose up
 
 ## Run
 
-import Postman Collection and Env
+from `assets/postman` import Postman Collection and Env
 then start sending requests
 
 ## Services FLOW
